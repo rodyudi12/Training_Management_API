@@ -1,2 +1,2 @@
 # Training_Management_API
-A gym training API that can help you to organize your training
+A gym training API that can help you to organize your training for your workouts
