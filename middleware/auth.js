@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken');
 
 function requireAuth(req, res, next) {
-  // 🔥 Allow tests to bypass authentication
+  // Allow tests to bypass authentication
   if (process.env.NODE_ENV === 'test') return next();
 
   const authHeader = req.headers.authorization;
@@ -18,7 +18,7 @@ function requireAuth(req, res, next) {
 }
 
 function requireManager(req, res, next) {
-  // 🔥 Also bypass manager check in test mode
+  // Also bypass manager check in test mode
   if (process.env.NODE_ENV === 'test') return next();
 
   if (req.user.role !== 'manager') {

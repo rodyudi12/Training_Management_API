@@ -3,7 +3,7 @@ const router = express.Router();
 const { WorkoutSession, WorkoutItem, Exercise } = require('../database');
 const { requireAuth, requireManager } = require('../middleware/auth');
 
-// ---------- WORKOUT SESSIONS ----------
+// WORKOUT SESSIONS 
 
 // GET all sessions
 router.get('/', requireAuth, async (req, res) => {
@@ -65,7 +65,7 @@ router.delete('/:id', requireAuth, async (req, res) => {
   }
 });
 
-// ---------- WORKOUT ITEMS ----------
+// WORKOUT ITEMS
 
 // GET items for a session
 router.get('/:sessionId/items', requireAuth, async (req, res) => {
