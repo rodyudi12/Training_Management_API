@@ -18,6 +18,9 @@ app.use((req, res, next) => {
   next();
 });
 
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
 // ---------- ROUTES ----------
 
 // Import routers
