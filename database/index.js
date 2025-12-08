@@ -1,16 +1,13 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { Sequelize } = require('sequelize');
 const path = require('path');
 
-const dataDir = path.join(__dirname, '..', 'data');
-if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir);
-  console.log("Created /data directory.");
-}
+// Folder where DB file will be stored
+const dataDir = path.join(__dirname);
 
 const sequelize = new Sequelize({
   dialect: 'sqlite',
   storage: path.join(dataDir, 'database.sqlite'),
-  logging: false
+  logging: false,
 });
 
 // Import model definitions
