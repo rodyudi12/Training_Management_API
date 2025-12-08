@@ -19,8 +19,6 @@ router.get('/:id', requireAuth, async (req, res) => {
   try {
     const user = await User.findByPk(req.params.id);
     if (!user) return res.status(404).json({ error: 'User not found' });
-
-    // Compare using loose equality to handle number/string mismatch
     if (req.user.role !== 'manager' && req.user.id != user.id) {
       return res.status(403).json({ error: 'Access denied' });
     }

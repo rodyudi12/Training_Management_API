@@ -23,7 +23,7 @@ async function seed() {
 
     // --- WORKOUT SESSIONS ---
     const sessions = await Promise.all([
-      WorkoutSession.create({ userId: users[0].id, notes: 'Morning session, feeling strong!' }),
+      WorkoutSession.create({ userId: users[0].id, notes: 'Morning session' }),
       WorkoutSession.create({ userId: users[1].id, notes: 'Evening session, focus on legs.' })
     ]);
 

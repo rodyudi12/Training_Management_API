@@ -7,7 +7,7 @@ const jwt = require('jsonwebtoken');
 // Load secret from .env
 const JWT_SECRET = process.env.JWT_SECRET || 'supersecretkey';
 
-// --- REGISTER NEW USER ---
+//REGISTER NEW USER
 router.post('/register', async (req, res) => {
   const { username, password, role } = req.body;
   if (!username || !password) {
@@ -33,7 +33,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// --- LOGIN ---
+//LOGIN
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
   if (!username || !password)
@@ -59,9 +59,8 @@ router.post('/login', async (req, res) => {
   }
 });
 
-// --- LOGOUT ---
+//LOGOUT
 router.post('/logout', (req, res) => {
-  // For JWT, logout is handled on client side by removing the token
   res.json({ message: 'Logout successful' });
 });
 

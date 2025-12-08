@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const { sequelize } = require('./index'); // get Sequelize instance
 
+
 async function setup() {
   try {
     // Ensure /data folder exists
